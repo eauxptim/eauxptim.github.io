@@ -1,11 +1,140 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
+const base = import.meta.env.BASE_URL;
+const link = (path = "") => `${base}${path}`;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout
+  title="Eauxptim | Water Process Optimization"
+  description="Research, software, and engineering solutions for smart optimization of water and wastewater treatment processes."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Research • Software • Engineering</p>
+        <h1>Smart optimization for water and wastewater processes</h1>
+        <p class="lead">
+          Eauxptim develops digital and engineering solutions for smarter,
+          cleaner, and more efficient water process operation.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href={link("services/")}>Explore services</a>
+          <a class="btn btn-secondary" href={link("contact/")}>Contact us</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Focus areas</h3>
+        <ul class="check-list">
+          <li>Wastewater treatment optimization</li>
+          <li>SaaS and AI-enabled software tools</li>
+          <li>Digital twins, sensors, and algorithms</li>
+          <li>Engineering, audit, and technical consulting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Mission</p>
+        <h2>Turning advanced process knowledge into practical digital tools</h2>
+        <p>
+          We combine research, engineering, and software development to support
+          performance improvement in hydric processes, with a strong focus on
+          optimization, control, and innovation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What we do</p>
+        <h2>Core activities</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Software platforms</h3>
+          <p>
+            Development and operation of software, SaaS, and AI-based solutions
+            for process monitoring and optimization.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Digital twins</h3>
+          <p>
+            Model-driven tools, simulation environments, and algorithmic
+            workflows for operational insight and decision support.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Engineering & consulting</h3>
+          <p>
+            Technical advisory, process audit, and engineering support for water
+            and wastewater treatment systems.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Research & innovation</h3>
+          <p>
+            Applied R&D in sensors, intelligent control, digital solutions, and
+            advanced process optimization.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Why Eauxptim</p>
+        <h2>Built for technical depth and real operational value</h2>
+        <p>
+          Eauxptim is designed for organizations that need more than a generic
+          website or generic analytics. The goal is actionable technical value:
+          measurable performance, better process understanding, and scalable
+          digital tools.
+        </p>
+      </div>
+
+      <div class="feature-panel">
+        <div>
+          <strong>Applied expertise</strong>
+          <p>Water processes, optimization, control, and digital methods.</p>
+        </div>
+        <div>
+          <strong>Scalable solutions</strong>
+          <p>From expert studies to software products and long-term platforms.</p>
+        </div>
+        <div>
+          <strong>Innovation-first</strong>
+          <p>Strong alignment with research, experimentation, and technical rigor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container cta-banner">
+      <div>
+        <p class="eyebrow">Let’s work together</p>
+        <h2>Need a digital, modelling, or optimization solution?</h2>
+        <p>
+          We support projects involving water process optimization, software
+          tools, digital twins, technical studies, and research collaboration.
+        </p>
+      </div>
+
+      <a class="btn btn-primary" href={link("contact/")}>Start a conversation</a>
+    </div>
+  </section>
+</MainLayout>

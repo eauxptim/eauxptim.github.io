@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Eauxptim",
+  description = "Smart solutions for water and wastewater process optimization.",
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const link = (path = "") => `${base}${path}`;
+
+const nav = [
+  { label: "Home", href: link("") },
+  { label: "About", href: link("about/") },
+  { label: "Services", href: link("services/") },
+  { label: "Contact", href: link("contact/") },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={link("favicon.svg")} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href={link("")}>
+          <span class="brand-mark">E</span>
+          <span class="brand-text">Eauxptim</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          {
+            nav.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Eauxptim</h3>
+          <p>
+            Research, software, and engineering for water and wastewater process
+            optimization.
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            {
+              nav.map((item) => (
+                <li><a href={item.href}>{item.label}</a></li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@eauxptim.com">contact@eauxptim.com</a></li>
+            <li>Liège, Belgium</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© {new Date().getFullYear()} Eauxptim. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
