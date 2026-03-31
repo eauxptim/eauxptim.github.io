@@ -17,6 +17,8 @@ Eauxptim focuses on advanced digital and technical solutions for the water secto
 
 This repository contains the source code for the Eauxptim company website, built with Astro and deployed with GitHub Pages.
 
+**Live website:** https://eauxptim.github.io/
+
 ## Contact
 
 - **Email:** [eauxptim@gmail.com](mailto:eauxptim@gmail.com)
